@@ -36,8 +36,6 @@ class <%= controller_class_name %>Controller < ApplicationController
   # POST <%= route_url %>
   # POST <%= route_url %>.json
   def create
-    @<%= singular_table_name %>.attributes = params[:<%= singular_table_name %>]
-
     respond_to do |format|
       if @<%= orm_instance.save %>
         format.html { redirect_to @<%= singular_table_name %>, notice: <%= "'#{human_name} was successfully created.'" %> }
